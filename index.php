@@ -8,10 +8,31 @@
     <body class="body">
         <header class="header"></header>
         <main class="main">
-            <?php 
-                include 'main.php';
+            <?php
+                include 'examplePersonsArray.inc.php';
+                include 'getFullNameFromParts.inc.php';
+                include 'getPartsFromFullName.inc.php';
+                include 'getShortName.inc.php';
+                $rndArrItem = $example_persons_array[rand(0, count($example_persons_array) - 1)];
+                echo '<pre>';
+                    print_r ($rndArrItem);
+                echo '</pre>';
 
-                echo (count($example_persons_array));
+                $name = $rndArrItem['fullname'];
+                print_r ($name);
+
+                echo '<pre>';
+                    $nameParts = getPartsFromFullName($name);
+                    print_r ($nameParts);
+                echo '</pre>';
+
+                $reName = getFullNameFromParts($nameParts['surName'], $nameParts['firstName'], $nameParts['patronymic']);
+                print_r ($reName);
+                
+                echo '<pre>';
+                    $shortName = getShortName($name);
+                    print_r ($shortName);
+                echo '</pre>';
             ?>
         </main>
         <footer class="footer"></footer>

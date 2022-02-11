@@ -1,8 +1,8 @@
 <?php
-    include 'getPartsFromFullName.inc.php';
     function getShortName($fullName) {
-        $shortFirstName = getPartsFromFullName['firstName'];
-        $shortSurName = getPartsFromFullName['surName'][0];
-        return $shortFirstName . '' . $shortSurName . '' . ".";
+        $nameParts = getPartsFromFullName($fullName);
+        $shortFirstName = $nameParts['firstName'];
+        $shortSurName = mb_substr($nameParts['surName'], 0, 1);
+        return $shortFirstName . ' ' . $shortSurName . ".";
     }
 ?>
