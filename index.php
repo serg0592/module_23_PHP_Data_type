@@ -15,6 +15,7 @@
                 include 'getShortName.inc.php';
                 include 'getGenderFromName.inc.php';
                 include 'getGenderDescription.inc.php';
+                include 'getPerfectPartner.inc.php';
 
                 $rndArrItem = $example_persons_array[rand(0, count($example_persons_array) - 1)];
                 echo '<pre>';
