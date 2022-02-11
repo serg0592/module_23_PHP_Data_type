@@ -17,34 +17,36 @@
                 include 'getGenderDescription.inc.php';
                 include 'getPerfectPartner.inc.php';
 
-                $rndArrItem = $example_persons_array[rand(0, count($example_persons_array) - 1)];
-                echo '<pre>';
-                    print_r ($rndArrItem);
-                echo '</pre>';
+                $rndPerson = $example_persons_array[rand(0, count($example_persons_array) - 1)];
+                /*echo '<pre>';
+                    print_r ($rndPerson);
+                echo '</pre>';*/
 
-                $name = $rndArrItem['fullname'];
-                print_r ($name);
+                $rndPersonName = $rndPerson['fullname'];
+                /*print_r ($rndPersonName);
 
-                echo '<pre>';
-                    $nameParts = getPartsFromFullName($name);
-                    print_r ($nameParts);
+                echo '<pre>';*/
+                    $nameParts = getPartsFromFullName($rndPersonName);
+                    /*print_r ($nameParts);
                 echo '</pre>';
 
                 $reName = getFullNameFromParts($nameParts['surName'], $nameParts['firstName'], $nameParts['patronymic']);
                 print_r ($reName);
                 
                 echo '<pre>';
-                    $shortName = getShortName($name);
+                    $shortName = getShortName($rndPersonName);
                     print_r ($shortName);
                 echo '</pre>';
 
-                $gender = getGenderFromName($name);
-                print_r ($gender);
+                $rndPersonGender = getGenderFromName($rndPersonName);
+                print_r ($rndPersonGender);
 
                 echo '<pre>';
                     $genderNum = getGenderDescription($example_persons_array);
                     print_r ($genderNum);
-                echo '</pre>';
+                echo '</pre>';*/
+
+                getPerfectPartner($nameParts['surName'], $nameParts['firstName'], $nameParts['patronymic'], $example_persons_array);
             ?>
         </main>
         <footer class="footer"></footer>
