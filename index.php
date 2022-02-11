@@ -14,6 +14,8 @@
                 include 'getPartsFromFullName.inc.php';
                 include 'getShortName.inc.php';
                 include 'getGenderFromName.inc.php';
+                include 'getGenderDescription.inc.php';
+
                 $rndArrItem = $example_persons_array[rand(0, count($example_persons_array) - 1)];
                 echo '<pre>';
                     print_r ($rndArrItem);
@@ -35,7 +37,13 @@
                     print_r ($shortName);
                 echo '</pre>';
 
-                getGenderFromName($name);
+                $gender = getGenderFromName($name);
+                print_r ($gender);
+
+                echo '<pre>';
+                    $genderNum = getGenderDescription($example_persons_array);
+                    print_r ($genderNum);
+                echo '</pre>';
             ?>
         </main>
         <footer class="footer"></footer>

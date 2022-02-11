@@ -22,17 +22,11 @@
         };
 
         if ($gender > 0) {
-            echo '<pre>';
-                print_r ('Мужской');
-            echo '</pre>';
+            return 'Мужской';
         } elseif ($gender < 0) {
-            echo '<pre>';
-                print_r ('Женский');
-            echo '</pre>';
+            return 'Женский';
         } else {
-            echo '<pre>';
-                print_r ('Неопределено');
-            echo '</pre>';
+            return 'Неопределено';
         };
     }
 ?>
