@@ -6,11 +6,17 @@
 
         $fullName = getFullNameFromParts($regSurName, $regFirstName, $regPatronymic);
         $gender = getGenderFromName($fullName);
+        echo '<pre>';
+            print_r ($gender);
+        echo '</pre>';
 
         do {
             $rndPerson = $personsArray[rand(0, count($personsArray) - 1)];
             $rndPersonName = $rndPerson['fullname'];
             $rndPersonGender = getGenderFromName($rndPersonName);
+            echo '<pre>';
+                print_r ($rndPersonGender);
+            echo '</pre>';
         }
         while ($gender === $rndPersonGender);
 

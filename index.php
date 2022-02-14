@@ -17,11 +17,18 @@
                 include 'getGenderDescription.inc.php';
                 include 'getPerfectPartner.inc.php';
 
+                //выбор случайного человека
                 $rndPerson = $example_persons_array[rand(0, count($example_persons_array) - 1)];
+                //выборка имени
                 $rndPersonName = $rndPerson['fullname'];
+                //разделение имени
                 $nameParts = getPartsFromFullName($rndPersonName);
+                //гендерный состав массива
                 $genderNum = getGenderDescription($example_persons_array);
-                print_r ($genderNum);
+                echo '<pre>';
+                    print_r ($genderNum);
+                echo '</pre>';
+                //идеальный партнер
                 getPerfectPartner($nameParts['surName'], $nameParts['firstName'], $nameParts['patronymic'], $example_persons_array);
             ?>
         </main>
